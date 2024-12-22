@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/app_page_view.dart';
 import 'package:my_portfolio/features/my_portfolio/widgets/my_portfolio_body.dart';
 import 'package:my_portfolio/gen/assets.gen.dart';
 import 'package:my_portfolio/responsive_layout_builder.dart';

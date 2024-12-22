@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -229,17 +230,24 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody>
         const SliverToBoxAdapter(
           child: SizedBox(height: 50),
         ),
-        SliverGrid(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-          ),
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return skills[index]['skillLogo'];
-            },
-            childCount: skills.length,
-          ),
-        ),
+        SliverToBoxAdapter(
+            child: CarouselSlider.builder(
+                itemCount: skills.length,
+                itemBuilder: (context, itemIndex, pageView) => Container(
+                      child: skills[itemIndex]['skillLogo'],
+                    ),
+                options: CarouselOptions(autoPlay: true, viewportFraction: 1)))
+        // SliverGrid(
+        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //     crossAxisCount: 3,
+        //   ),
+        //   delegate: SliverChildBuilderDelegate(
+        //     (BuildContext context, int index) {
+        //       return skills[index]['skillLogo'];
+        //     },
+        //     childCount: skills.length,
+        //   ),
+        // ),
       ],
     );
   }
