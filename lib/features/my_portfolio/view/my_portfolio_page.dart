@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/app_page_view.dart';
 import 'package:my_portfolio/features/my_portfolio/widgets/my_portfolio_body.dart';
 import 'package:my_portfolio/gen/assets.gen.dart';
+import 'package:my_portfolio/responsive_layout_builder.dart';
 
 /// {@template my_portfolio_page}
 /// A description for MyPortfolioPage
@@ -55,6 +57,20 @@ class MyPortfolioView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MyPortfolioBody();
+    return ResponsiveLayoutBuilder(
+      small: (context, child) => Padding(
+        padding: EdgeInsets.zero,
+        child: child,
+      ),
+      medium: (context, child) => Padding(
+        padding: const EdgeInsets.fromLTRB(50, 5, 50, 40),
+        child: child,
+      ),
+      large: (context, child) => Padding(
+        padding: const EdgeInsets.fromLTRB(50, 5, 50, 40),
+        child: child,
+      ),
+      child: const MyPortfolioBody(),
+    );
   }
 }
