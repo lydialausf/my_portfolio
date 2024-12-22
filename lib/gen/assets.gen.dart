@@ -15,6 +15,27 @@ class $AssetsImagesGen {
   /// File path: assets/images/R.jpeg
   AssetGenImage get r => const AssetGenImage('assets/images/R.jpeg');
 
+  /// File path: assets/images/amazon.jpeg
+  AssetGenImage get amazon => const AssetGenImage('assets/images/amazon.jpeg');
+
+  /// File path: assets/images/androidstudio.jpg
+  AssetGenImage get androidstudio =>
+      const AssetGenImage('assets/images/androidstudio.jpg');
+
+  /// File path: assets/images/css.png
+  AssetGenImage get css => const AssetGenImage('assets/images/css.png');
+
+  /// File path: assets/images/firebase.png
+  AssetGenImage get firebase =>
+      const AssetGenImage('assets/images/firebase.png');
+
+  /// File path: assets/images/flutterlogo.png
+  AssetGenImage get flutterlogo =>
+      const AssetGenImage('assets/images/flutterlogo.png');
+
+  /// File path: assets/images/html5.jpeg
+  AssetGenImage get html5 => const AssetGenImage('assets/images/html5.jpeg');
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
@@ -27,11 +48,62 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo3.jpg
   AssetGenImage get logo3 => const AssetGenImage('assets/images/logo3.jpg');
 
+  /// File path: assets/images/logo4.png
+  AssetGenImage get logo4 => const AssetGenImage('assets/images/logo4.png');
+
+  /// File path: assets/images/logo5.jpeg
+  AssetGenImage get logo5 => const AssetGenImage('assets/images/logo5.jpeg');
+
+  /// File path: assets/images/logo6.png
+  AssetGenImage get logo6 => const AssetGenImage('assets/images/logo6.png');
+
+  /// File path: assets/images/logo7.jpeg
+  AssetGenImage get logo7 => const AssetGenImage('assets/images/logo7.jpeg');
+
+  /// File path: assets/images/logo8.jpg
+  AssetGenImage get logo8 => const AssetGenImage('assets/images/logo8.jpg');
+
+  /// File path: assets/images/logo9.jpg
+  AssetGenImage get logo9 => const AssetGenImage('assets/images/logo9.jpg');
+
+  /// File path: assets/images/php.png
+  AssetGenImage get php => const AssetGenImage('assets/images/php.png');
+
   /// File path: assets/images/preview.png
   AssetGenImage get preview => const AssetGenImage('assets/images/preview.png');
 
+  /// File path: assets/images/teamplayer.jpg
+  AssetGenImage get teamplayer =>
+      const AssetGenImage('assets/images/teamplayer.jpg');
+
+  /// File path: assets/images/wordpress.png
+  AssetGenImage get wordpress =>
+      const AssetGenImage('assets/images/wordpress.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [r, logo, logo1, logo2, logo3, preview];
+  List<AssetGenImage> get values => [
+        r,
+        amazon,
+        androidstudio,
+        css,
+        firebase,
+        flutterlogo,
+        html5,
+        logo,
+        logo1,
+        logo2,
+        logo3,
+        logo4,
+        logo5,
+        logo6,
+        logo7,
+        logo8,
+        logo9,
+        php,
+        preview,
+        teamplayer,
+        wordpress
+      ];
 }
 
 class Assets {
