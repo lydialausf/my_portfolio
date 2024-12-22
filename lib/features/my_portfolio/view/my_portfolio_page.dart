@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/features/my_portfolio/widgets/my_portfolio_body.dart';
 import 'package:my_portfolio/gen/assets.gen.dart';
 import 'package:my_portfolio/responsive_layout_builder.dart';
+import 'package:my_portfolio/router/routes.dart';
 
 /// {@template my_portfolio_page}
 /// A description for MyPortfolioPage
 /// {@endtemplate}
+
 class MyPortfolioPage extends StatelessWidget {
   /// {@macro my_portfolio_page}
   const MyPortfolioPage({super.key});
@@ -19,24 +22,26 @@ class MyPortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Assets.images.preview.image(
-          height: 100,
-        ),
-        leadingWidth: 100,
         toolbarHeight: 100,
         elevation: 1,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Row(
+            Row(
               children: [
-                Text("Lydia's Portfolio"),
+                Assets.images.preview.image(width: 100),
+                const SizedBox(width: 10),
+                const Text("Lydia's Portfolio"),
               ],
             ),
             Row(
               children: [
-                TextButton(onPressed: () {}, child: const Text("Home")),
-                TextButton(onPressed: () {}, child: const Text("About Me"))
+                TextButton(
+                    onPressed: () => context.go('/'),
+                    child: const Text("Home")),
+                TextButton(
+                    onPressed: () => context.go('/about_me'),
+                    child: const Text("About Me"))
               ],
             ),
           ],

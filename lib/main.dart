@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/features/my_portfolio/my_portfolio.dart';
+import 'package:go_router/go_router.dart';
+import 'package:my_portfolio/router/routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final GoRouter _router = MyPortfolioRouter().router;
+
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+        routerConfig: _router,
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.
@@ -31,8 +35,7 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
-        ),
-        home: const MyPortfolioPage());
+        ));
   }
 }
 

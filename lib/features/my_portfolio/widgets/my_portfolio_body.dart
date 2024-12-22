@@ -236,18 +236,8 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody>
                 itemBuilder: (context, itemIndex, pageView) => Container(
                       child: skills[itemIndex]['skillLogo'],
                     ),
-                options: CarouselOptions(autoPlay: true, viewportFraction: 1)))
-        // SliverGrid(
-        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        //     crossAxisCount: 3,
-        //   ),
-        //   delegate: SliverChildBuilderDelegate(
-        //     (BuildContext context, int index) {
-        //       return skills[index]['skillLogo'];
-        //     },
-        //     childCount: skills.length,
-        //   ),
-        // ),
+                options: CarouselOptions(
+                    autoPlay: true, viewportFraction: 1, height: 240)))
       ],
     );
   }
