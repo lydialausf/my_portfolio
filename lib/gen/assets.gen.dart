@@ -29,6 +29,10 @@ class $AssetsImagesGen {
   AssetGenImage get climbing =>
       const AssetGenImage('assets/images/climbing.jpg');
 
+  /// File path: assets/images/climbing1.jpg
+  AssetGenImage get climbing1 =>
+      const AssetGenImage('assets/images/climbing1.jpg');
+
   /// File path: assets/images/css.png
   AssetGenImage get css => const AssetGenImage('assets/images/css.png');
 
@@ -85,6 +89,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/preview.png
   AssetGenImage get preview => const AssetGenImage('assets/images/preview.png');
 
+  /// File path: assets/images/range.jpg
+  AssetGenImage get range => const AssetGenImage('assets/images/range.jpg');
+
   /// File path: assets/images/teamplayer.jpg
   AssetGenImage get teamplayer =>
       const AssetGenImage('assets/images/teamplayer.jpg');
@@ -100,6 +107,7 @@ class $AssetsImagesGen {
         androidstudio,
         bear,
         climbing,
+        climbing1,
         css,
         firebase,
         flutterlogo,
@@ -118,6 +126,7 @@ class $AssetsImagesGen {
         myself,
         php,
         preview,
+        range,
         teamplayer,
         wordpress
       ];

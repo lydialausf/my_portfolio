@@ -15,8 +15,40 @@ class AboutMeBody extends StatefulWidget {
   State<AboutMeBody> createState() => _AboutMeBodyState();
 }
 
+final List<dynamic> imageList = [
+  {
+    'image': Assets.images.climbing.image(),
+  },
+  {
+    'image': Assets.images.climbing1.image(),
+  },
+  {
+    'image': Assets.images.range.image(),
+  },
+];
+
 class _AboutMeBodyState extends State<AboutMeBody> {
   bool showWidget = false;
+
+  void showHobbyDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: const Text(
+              "Badminton, playing video games, hiking, and trying out new things!"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +62,16 @@ class _AboutMeBodyState extends State<AboutMeBody> {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
             ),
             CarouselSlider.builder(
-              itemCount: 3,
+              itemCount: imageList.length,
               itemBuilder: (context, index, realIndex) {
-                return Assets.images.climbing.image();
+                return Container(
+                  child: imageList[index]['image'],
+                );
               },
               options: CarouselOptions(
                 autoPlay: true,
                 viewportFraction: 1,
-                enlargeCenterPage: true,
+                height: 240,
               ),
             ),
             const SizedBox(height: 20),
@@ -46,9 +80,7 @@ class _AboutMeBodyState extends State<AboutMeBody> {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
             ),
             const SizedBox(height: 20),
-
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 showWidget
                     ? GestureDetector(
@@ -68,28 +100,16 @@ class _AboutMeBodyState extends State<AboutMeBody> {
                         },
                         child: const Text('Take a guess?')),
               ],
-            )
-            // const Text(
-            //   "I am originally from ",
-            //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
-            // ),
-            // showWidget
-            //     ? GestureDetector(
-            //         onTap: () {
-            //           setState(() {
-            //             showWidget = !showWidget;
-            //           });
-            //         },
-            //         child: const Text(
-            //             'Kuching, Sarawak, Malaysia - the home of Kuching City!'),
-            //       )
-            //     : TextButton(
-            //         onPressed: () {
-            //           setState(() {
-            //             showWidget = !showWidget;
-            //           });
-            //         },
-            //         child: const Text('Take a guess?'))
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "My hobbies are... ",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+            ),
+            const SizedBox(height: 20),
+            TextButton(
+                onPressed: () => showHobbyDialog(),
+                child: const Text("Click here to reveal"))
           ],
         ),
       )
