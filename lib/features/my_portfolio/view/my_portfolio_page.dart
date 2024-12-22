@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/features/my_portfolio/widgets/my_portfolio_body.dart';
 import 'package:my_portfolio/gen/assets.gen.dart';
 import 'package:my_portfolio/responsive_layout_builder.dart';
-import 'package:my_portfolio/router/routes.dart';
 
 /// {@template my_portfolio_page}
 /// A description for MyPortfolioPage
@@ -29,7 +28,7 @@ class MyPortfolioPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Assets.images.preview.image(width: 100),
+                Assets.images.logo4.image(width: 100),
                 const SizedBox(width: 10),
                 const Text("Lydia's Portfolio"),
               ],
