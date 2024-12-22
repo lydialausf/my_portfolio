@@ -25,6 +25,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/bear.jpg
   AssetGenImage get bear => const AssetGenImage('assets/images/bear.jpg');
 
+  /// File path: assets/images/climbing.jpg
+  AssetGenImage get climbing =>
+      const AssetGenImage('assets/images/climbing.jpg');
+
   /// File path: assets/images/css.png
   AssetGenImage get css => const AssetGenImage('assets/images/css.png');
 
@@ -72,6 +76,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/lydia.png
   AssetGenImage get lydia => const AssetGenImage('assets/images/lydia.png');
 
+  /// File path: assets/images/myself.jpg
+  AssetGenImage get myself => const AssetGenImage('assets/images/myself.jpg');
+
   /// File path: assets/images/php.png
   AssetGenImage get php => const AssetGenImage('assets/images/php.png');
 
@@ -92,6 +99,7 @@ class $AssetsImagesGen {
         amazon,
         androidstudio,
         bear,
+        climbing,
         css,
         firebase,
         flutterlogo,
@@ -107,6 +115,7 @@ class $AssetsImagesGen {
         logo8,
         logo9,
         lydia,
+        myself,
         php,
         preview,
         teamplayer,

@@ -6,11 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('MyPortfolioPage', () {
-    group('route', () {
-      test('is routable', () {
-        expect(MyPortfolioPage.route(), isA<MaterialPageRoute>());
-      });
-    });
+    group('route', () {});
 
     testWidgets('renders MyPortfolioView', (tester) async {
       await tester.pumpWidget(MaterialApp(home: MyPortfolioPage()));

@@ -31,10 +31,16 @@ class MyPortfolioPage extends StatelessWidget {
               ],
             ),
             isSmallScreen
-                ? IconButton(
-                    icon: const Icon(Icons.menu),
-                    onPressed: () => context.go('/about_me'),
-                  )
+                ? PopupMenuButton(itemBuilder: (context) {
+                    return [
+                      PopupMenuItem(
+                        child: TextButton(
+                          onPressed: () => context.go('/about_me'),
+                          child: const Text("About Me"),
+                        ),
+                      ),
+                    ];
+                  })
                 : Row(
                     children: [
                       TextButton(

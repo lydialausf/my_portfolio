@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/features/about_me/widgets/about_me_body.dart';
+import 'package:my_portfolio/global/global.dart';
 
 /// {@template about_me_page}
 /// A description for AboutMePage
@@ -23,7 +24,9 @@ class AboutMePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("About Myself"),
+      ),
       body: const AboutMeView(),
     );
   }
@@ -38,6 +41,20 @@ class AboutMeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AboutMeBody();
+    return ResponsiveLayoutBuilder(
+      small: (context, child) => Padding(
+        padding: const EdgeInsets.fromLTRB(20, 5, 20, 20),
+        child: child,
+      ),
+      medium: (context, child) => Padding(
+        padding: const EdgeInsets.fromLTRB(50, 5, 50, 20),
+        child: child,
+      ),
+      large: (context, child) => Padding(
+        padding: const EdgeInsets.fromLTRB(50, 5, 50, 20),
+        child: child,
+      ),
+      child: const AboutMeBody(),
+    );
   }
 }
