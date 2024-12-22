@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+import 'package:my_portfolio/gen/app_ui.dart';
 
-import 'package:my_portfolio/gen/assets.gen.dart';
+import 'package:my_portfolio/global/global.dart';
 
 /// {@template my_portfolio_body}
 /// Body of the MyPortfolioPage.
@@ -17,19 +17,7 @@ class MyPortfolioBody extends StatefulWidget {
   State<MyPortfolioBody> createState() => _MyPortfolioBodyState();
 }
 
-class _MyPortfolioBodyState extends State<MyPortfolioBody>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller = AnimationController(
-    duration: const Duration(seconds: 10),
-    vsync: this,
-  )..repeat();
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
+class _MyPortfolioBodyState extends State<MyPortfolioBody> {
   final List<Map<String, dynamic>> workExperiences = [
     {
       'companyLogo': Assets.images.logo.image(width: 100, height: 100),
@@ -131,72 +119,46 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody>
   ];
   @override
   Widget build(BuildContext context) {
+    final isSmallScreen = context.isScreenSmall;
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
+        !isSmallScreen
+            ? const SliverToBoxAdapter(
+                child: Row(
+                  children: [
+                    SpinningWidget(),
+                    SizedBox(width: 20),
+                    Expanded(child: IntroductionWidget()),
+                  ],
+                ),
+              )
+            : const SliverToBoxAdapter(
+                child: Column(
+                children: [
+                  SpinningWidget(),
+                  SizedBox(height: 20),
+                  IntroductionWidget(),
+                ],
+              )),
+        const SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      if (_controller.isAnimating) {
-                        _controller.stop();
-                      } else {
-                        _controller.repeat();
-                      }
-                    },
-                    child: AnimatedBuilder(
-                      animation: _controller,
-                      child: CircleAvatar(
-                        radius: 100,
-                        child: ClipOval(
-                            child: Assets.images.r.image(
-                                fit: BoxFit.cover, height: 200, width: 200)),
-                      ),
-                      builder: (BuildContext context, Widget? child) {
-                        return Transform.rotate(
-                          angle: _controller.value * 2.0 * math.pi,
-                          child: child,
-                        );
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 50),
-                  const Expanded(
-                    child: DecoratedBox(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Color.fromARGB(255, 231, 236, 223)),
-                        child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Text(
-                            "Hello! Welcome to my portfolio! I am Lydia, a Flutter Developer. I am passionate about creating functional apps. I love to explore new things and learn new technologies. I am a quick learner and a team player. I am always ready to take on new challenges and work on exciting projects. I am looking forward to working with you, even more eager to learn things that I am not familiar with!",
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        )),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 100),
-              const Text("My Work Experience", style: TextStyle(fontSize: 30)),
-              const SizedBox(height: 50),
+              SizedBox(height: 50),
+              Text("My Work Experience", style: TextStyle(fontSize: 30)),
+              SizedBox(height: 50),
             ],
           ),
         ),
         SliverList.separated(
           itemCount: workExperiences.length,
           itemBuilder: (context, index) {
-            return ListTile(
-              leading: workExperiences[index]['companyLogo'],
-              title: Text(
-                  workExperiences[index]['title'] ?? "Work Experience $index"),
-              subtitle:
-                  Text(workExperiences[index]['subtitle'] ?? "Subtitle $index"),
-              trailing:
-                  Text(workExperiences[index]['trailing'] ?? "Subtitle $index"),
-            );
+            return ListTileWidget(
+                image: workExperiences[index]['companyLogo'],
+                title: workExperiences[index]['title'],
+                subtitle: workExperiences[index]['subtitle'],
+                leading: workExperiences[index]['companyLogo'],
+                trailing: workExperiences[index]['trailing']);
           },
           separatorBuilder: (context, index) => const Divider(),
         ),
@@ -212,12 +174,12 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody>
         SliverList.separated(
           itemCount: education.length,
           itemBuilder: (context, index) {
-            return ListTile(
-              leading: education[index]['companyLogo'] ?? Container(),
-              title: Text(education[index]['title'] ?? "Education $index"),
-              subtitle: Text(education[index]['subtitle'] ?? "Subtitle $index"),
-              trailing: Text(education[index]['trailing'] ?? "Subtitle $index"),
-            );
+            return ListTileWidget(
+                image: education[index]['companyLogo'],
+                title: education[index]['title'],
+                subtitle: education[index]['subtitle'],
+                leading: education[index]['companyLogo'],
+                trailing: education[index]['trailing']);
           },
           separatorBuilder: (context, index) => const Divider(),
         ),
@@ -269,23 +231,31 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody>
           child: SizedBox(height: 30),
         ),
         const SliverToBoxAdapter(
-            child: Row(
+            child: Wrap(
           children: [
-            Icon(Icons.email),
-            SizedBox(
-              width: 20,
+            Row(
+              children: [
+                Icon(Icons.email),
+                SizedBox(
+                  width: 20,
+                ),
+                Text("stam_pin@hotmail.com"),
+                SizedBox(
+                  width: 20,
+                ),
+              ],
             ),
-            Text("stam_pin@hotmail.com"),
-            SizedBox(
-              width: 20,
-            ),
-            Icon(Icons.phone),
-            SizedBox(
-              width: 20,
-            ),
-            Text("+60163359959"),
+            Row(
+              children: [
+                Icon(Icons.phone),
+                SizedBox(
+                  width: 20,
+                ),
+                Text("+60163359959"),
+              ],
+            )
           ],
-        ))
+        )),
       ],
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/features/my_portfolio/widgets/my_portfolio_body.dart';
-import 'package:my_portfolio/gen/assets.gen.dart';
-import 'package:my_portfolio/responsive_layout_builder.dart';
+import 'package:my_portfolio/gen/app_ui.dart';
+import 'package:my_portfolio/global/global.dart';
 
 /// {@template my_portfolio_page}
 /// A description for MyPortfolioPage
@@ -12,13 +12,9 @@ class MyPortfolioPage extends StatelessWidget {
   /// {@macro my_portfolio_page}
   const MyPortfolioPage({super.key});
 
-  /// The static route for MyPortfolioPage
-  static Route<dynamic> route() {
-    return MaterialPageRoute<dynamic>(builder: (_) => const MyPortfolioPage());
-  }
-
   @override
   Widget build(BuildContext context) {
+    final isSmallScreen = context.isScreenSmall;
     return Scaffold(
       appBar: AppBar(
         leading: Assets.images.lydia.image(width: 100),
@@ -34,16 +30,18 @@ class MyPortfolioPage extends StatelessWidget {
                 Text("Lydia's Portfolio"),
               ],
             ),
-            Row(
-              children: [
-                TextButton(
-                    onPressed: () => context.go('/'),
-                    child: const Text("Home")),
-                TextButton(
+            isSmallScreen
+                ? IconButton(
+                    icon: const Icon(Icons.menu),
                     onPressed: () => context.go('/about_me'),
-                    child: const Text("About Me"))
-              ],
-            ),
+                  )
+                : Row(
+                    children: [
+                      TextButton(
+                          onPressed: () => context.go('/about_me'),
+                          child: const Text("About Me"))
+                    ],
+                  ),
           ],
         ),
       ),
@@ -63,15 +61,15 @@ class MyPortfolioView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveLayoutBuilder(
       small: (context, child) => Padding(
-        padding: EdgeInsets.zero,
+        padding: const EdgeInsets.fromLTRB(20, 5, 20, 20),
         child: child,
       ),
       medium: (context, child) => Padding(
-        padding: const EdgeInsets.fromLTRB(50, 5, 50, 40),
+        padding: const EdgeInsets.fromLTRB(50, 5, 50, 20),
         child: child,
       ),
       large: (context, child) => Padding(
-        padding: const EdgeInsets.fromLTRB(50, 5, 50, 40),
+        padding: const EdgeInsets.fromLTRB(50, 5, 50, 20),
         child: child,
       ),
       child: const MyPortfolioBody(),

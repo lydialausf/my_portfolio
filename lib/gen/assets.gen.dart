@@ -22,6 +22,9 @@ class $AssetsImagesGen {
   AssetGenImage get androidstudio =>
       const AssetGenImage('assets/images/androidstudio.jpg');
 
+  /// File path: assets/images/bear.jpg
+  AssetGenImage get bear => const AssetGenImage('assets/images/bear.jpg');
+
   /// File path: assets/images/css.png
   AssetGenImage get css => const AssetGenImage('assets/images/css.png');
 
@@ -88,6 +91,7 @@ class $AssetsImagesGen {
         r,
         amazon,
         androidstudio,
+        bear,
         css,
         firebase,
         flutterlogo,
