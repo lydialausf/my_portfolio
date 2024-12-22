@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/features/my_portfolio/bloc/bloc.dart';
 import 'package:my_portfolio/features/my_portfolio/widgets/my_portfolio_body.dart';
+import 'package:my_portfolio/gen/assets.gen.dart';
 
 /// {@template my_portfolio_page}
 /// A description for MyPortfolioPage
@@ -16,8 +16,32 @@ class MyPortfolioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: MyPortfolioView(),
+    return Scaffold(
+      appBar: AppBar(
+        leading: Assets.images.preview.image(
+          height: 100,
+        ),
+        leadingWidth: 100,
+        toolbarHeight: 100,
+        elevation: 1,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Row(
+              children: [
+                Text("Lydia's Portfolio"),
+              ],
+            ),
+            Row(
+              children: [
+                TextButton(onPressed: () {}, child: const Text("Home")),
+                TextButton(onPressed: () {}, child: const Text("About Me"))
+              ],
+            ),
+          ],
+        ),
+      ),
+      body: const MyPortfolioView(),
     );
   }
 }
