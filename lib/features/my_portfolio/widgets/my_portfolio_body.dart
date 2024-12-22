@@ -32,7 +32,7 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody>
 
   final List<Map<String, dynamic>> workExperiences = [
     {
-      'companyLogo': Assets.images.preview.image(width: 100, height: 100),
+      'companyLogo': Assets.images.logo.image(width: 100, height: 100),
       'title': "Flutter Developer @ Discovery Holiday Parks",
       'subtitle':
           "\u2022 Revamped WikiCamps using Flutter and BLoC as the state management.\n\u2022 Collaborated with UI/UX designer to implement user interface.\n\u2022 Use bloc_test for integration unit testing to ensure every widget functions accordingly.\n\u2022 Utilized tools such as Jira, Confluence, and AzureDevOps for project management and version control.\n\u2022 Worked closely with backend to fetch and post data.",
@@ -242,14 +242,50 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody>
           child: SizedBox(height: 50),
         ),
         const SliverToBoxAdapter(
-          child: Text("My Referrer", style: TextStyle(fontSize: 30)),
+          child: Text("Referral", style: TextStyle(fontSize: 30)),
         ),
         const SliverToBoxAdapter(
           child: SizedBox(height: 50),
         ),
         const SliverToBoxAdapter(
-          child: Column(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Lee Van Hooff - Senior Full Stack Engineer @ Budgetly"),
+              Text(
+                  "Luke Moody - Flutter & Dart Google Developer Expert and Founder @ CleerConsulting"),
+              Text(
+                  "Kiran Vilasagaram - Founder, IT Manager, Strategic Innovator @ Crennotech Pty Ltd"),
+            ],
+          ),
         ),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 30),
+        ),
+        const SliverToBoxAdapter(
+          child: Text("Get in touch with me", style: TextStyle(fontSize: 30)),
+        ),
+        const SliverToBoxAdapter(
+          child: SizedBox(height: 30),
+        ),
+        const SliverToBoxAdapter(
+            child: Row(
+          children: [
+            Icon(Icons.email),
+            SizedBox(
+              width: 20,
+            ),
+            Text("stam_pin@hotmail.com"),
+            SizedBox(
+              width: 20,
+            ),
+            Icon(Icons.phone),
+            SizedBox(
+              width: 20,
+            ),
+            Text("+60163359959"),
+          ],
+        ))
       ],
     );
   }

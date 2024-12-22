@@ -21,16 +21,17 @@ class MyPortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Assets.images.preview.image(width: 100),
+        leadingWidth: 100,
         toolbarHeight: 100,
         elevation: 1,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
+            const Row(
               children: [
-                Assets.images.logo4.image(width: 100),
-                const SizedBox(width: 10),
-                const Text("Lydia's Portfolio"),
+                SizedBox(width: 10),
+                Text("Lydia's Portfolio"),
               ],
             ),
             Row(
