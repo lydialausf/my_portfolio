@@ -21,7 +21,7 @@ class MyPortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Assets.images.preview.image(width: 100),
+        leading: Assets.images.lydia.image(width: 100),
         leadingWidth: 100,
         toolbarHeight: 100,
         elevation: 1,

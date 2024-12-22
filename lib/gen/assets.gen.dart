@@ -66,6 +66,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo9.jpg
   AssetGenImage get logo9 => const AssetGenImage('assets/images/logo9.jpg');
 
+  /// File path: assets/images/lydia.png
+  AssetGenImage get lydia => const AssetGenImage('assets/images/lydia.png');
+
   /// File path: assets/images/php.png
   AssetGenImage get php => const AssetGenImage('assets/images/php.png');
 
@@ -99,6 +102,7 @@ class $AssetsImagesGen {
         logo7,
         logo8,
         logo9,
+        lydia,
         php,
         preview,
         teamplayer,
