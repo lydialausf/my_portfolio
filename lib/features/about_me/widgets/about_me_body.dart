@@ -80,7 +80,7 @@ class _AboutMeBodyState extends State<AboutMeBody> {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
             ),
             const SizedBox(height: 20),
-            Row(
+            Wrap(
               children: [
                 showWidget
                     ? GestureDetector(
