@@ -145,6 +145,16 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 50),
+              Text("My Projects - In Progress", style: TextStyle(fontSize: 30)),
+              Text("https://todolist-sooty-mu.vercel.app/")
+            ],
+          ),
+        ),
+        const SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 50),
               Text("My Work Experience", style: TextStyle(fontSize: 30)),
               SizedBox(height: 50),
             ],
