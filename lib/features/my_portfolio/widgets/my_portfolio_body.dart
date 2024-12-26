@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/gen/app_ui.dart';
 
 import 'package:my_portfolio/global/global.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// {@template my_portfolio_body}
 /// Body of the MyPortfolioPage.
@@ -18,6 +19,8 @@ class MyPortfolioBody extends StatefulWidget {
 }
 
 class _MyPortfolioBodyState extends State<MyPortfolioBody> {
+  final Uri _url = Uri.parse('https://todolist-sooty-mu.vercel.app/');
+
   final List<Map<String, dynamic>> workExperiences = [
     {
       'companyLogo': Assets.images.logo.image(width: 100, height: 100),
@@ -117,6 +120,13 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
     {'skillLogo': Assets.images.teamplayer.image()},
     {'skillLogo': Assets.images.wordpress.image()},
   ];
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isSmallScreen = context.isScreenSmall;
@@ -140,13 +150,16 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
                   IntroductionWidget(),
                 ],
               )),
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 50),
-              Text("My Projects - In Progress", style: TextStyle(fontSize: 30)),
-              Text("https://todolist-sooty-mu.vercel.app/")
+              const SizedBox(height: 50),
+              const Text("My Projects - In Progress",
+                  style: TextStyle(fontSize: 30)),
+              TextButton(
+                  onPressed: _launchUrl,
+                  child: const Text("https://todolist-sooty-mu.vercel.app/")),
             ],
           ),
         ),
