@@ -19,7 +19,8 @@ class MyPortfolioBody extends StatefulWidget {
 }
 
 class _MyPortfolioBodyState extends State<MyPortfolioBody> {
-  final Uri _url = Uri.parse('https://todolist-sooty-mu.vercel.app/');
+  final _todoList = 'https://todolist-sooty-mu.vercel.app/';
+  final _newsApi = "https://github.com/lydialausf/newsapi.git";
 
   final List<Map<String, dynamic>> workExperiences = [
     {
@@ -121,9 +122,10 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
     {'skillLogo': Assets.images.wordpress.image()},
   ];
 
-  Future<void> _launchUrl() async {
-    if (!await launchUrl(_url)) {
-      throw Exception('Could not launch $_url');
+  Future<void> _launchUrl(String url) async {
+    final uri = Uri.tryParse(url);
+    if (uri != null && await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 
@@ -158,8 +160,11 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
               const Text("My Projects - In Progress",
                   style: TextStyle(fontSize: 30)),
               TextButton(
-                  onPressed: _launchUrl,
-                  child: const Text("https://todolist-sooty-mu.vercel.app/")),
+                  onPressed: () => _launchUrl(_todoList),
+                  child: const Text("Todo List App")),
+              TextButton(
+                  onPressed: () => _launchUrl(_newsApi),
+                  child: const Text("NewsAPI App")),
             ],
           ),
         ),
