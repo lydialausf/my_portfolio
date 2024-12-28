@@ -164,7 +164,7 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
                   child: const Text("Todo List App")),
               TextButton(
                   onPressed: () => _launchUrl(_newsApi),
-                  child: const Text("NewsAPI App")),
+                  child: const Text("NewsAPI App GitHub")),
             ],
           ),
         ),
