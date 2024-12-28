@@ -1,4 +1,4 @@
-/// Namespace for Default WikiCamps Breakpoints
+/// Namespace for Default MyPortfolio Breakpoints
 abstract class MyPortfolioBreakpoints {
   /// Max width for a small layout.
   static const double small = 905;
