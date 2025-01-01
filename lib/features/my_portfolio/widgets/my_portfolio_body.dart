@@ -19,7 +19,7 @@ class MyPortfolioBody extends StatefulWidget {
 }
 
 class _MyPortfolioBodyState extends State<MyPortfolioBody> {
-  final _todoList = 'https://todolist-sooty-mu.vercel.app/';
+  final _todoList = 'https://todolist-fxv6.vercel.app/';
   final _newsApi = "https://github.com/lydialausf/newsapi.git";
 
   final List<Map<String, dynamic>> workExperiences = [
@@ -161,7 +161,7 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
                   style: TextStyle(fontSize: 30)),
               TextButton(
                   onPressed: () => _launchUrl(_todoList),
-                  child: const Text("Todo List App")),
+                  child: const Text("Firebase Todo List App")),
               TextButton(
                   onPressed: () => _launchUrl(_newsApi),
                   child: const Text("NewsAPI App GitHub")),
