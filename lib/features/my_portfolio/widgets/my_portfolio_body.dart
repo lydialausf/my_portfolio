@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/gen/app_ui.dart';
 
 import 'package:my_portfolio/global/global.dart';
+import 'package:my_portfolio/global/text_content.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// {@template my_portfolio_body}
@@ -19,9 +20,6 @@ class MyPortfolioBody extends StatefulWidget {
 }
 
 class _MyPortfolioBodyState extends State<MyPortfolioBody> {
-  final _todoList = 'https://todolist-fxv6.vercel.app/';
-  final _newsApi = "https://github.com/lydialausf/newsapi.git";
-
   final List<Map<String, dynamic>> workExperiences = [
     {
       'companyLogo': Assets.images.logo.image(width: 100, height: 100),
@@ -140,7 +138,9 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
                   children: [
                     SpinningWidget(),
                     SizedBox(width: 20),
-                    Expanded(child: IntroductionWidget()),
+                    Expanded(
+                        child: IntroductionWidget(
+                            text: PortfolioText.introContent)),
                   ],
                 ),
               )
@@ -149,7 +149,7 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
                 children: [
                   SpinningWidget(),
                   SizedBox(height: 20),
-                  IntroductionWidget(),
+                  IntroductionWidget(text: PortfolioText.introContent),
                 ],
               )),
         SliverToBoxAdapter(
@@ -160,10 +160,11 @@ class _MyPortfolioBodyState extends State<MyPortfolioBody> {
               const Text("My Projects - In Progress",
                   style: TextStyle(fontSize: 30)),
               TextButton(
-                  onPressed: () => _launchUrl(_todoList),
-                  child: const Text("Firebase Todo List App")),
+                  onPressed: () => _launchUrl(PortfolioText.todoListLink),
+                  child: const Text(
+                      "Firebase Todo List App - Currently submitted and in review for closed testing alpha at Google Play Console")),
               TextButton(
-                  onPressed: () => _launchUrl(_newsApi),
+                  onPressed: () => _launchUrl(PortfolioText.githubLink),
                   child: const Text("NewsAPI App GitHub")),
             ],
           ),

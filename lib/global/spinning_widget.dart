@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/gen/assets.gen.dart';
 import 'dart:math' as math;
+import 'package:my_portfolio/global/global.dart';
 
 class SpinningWidget extends StatefulWidget {
   const SpinningWidget({super.key});
@@ -51,7 +52,7 @@ class _SpinningWidgetState extends State<SpinningWidget>
           ),
         ),
         const SizedBox(height: 10),
-        const Text("Click on the image to start/stop spinning"),
+        const Text(PortfolioText.spinningContent),
       ],
     );
   }

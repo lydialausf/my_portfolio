@@ -24,11 +24,10 @@ class MyPortfolioPage extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Row(
-              children: [
-                SizedBox(width: 10),
-                Text("Lydia's Portfolio"),
-              ],
+            const Expanded(
+              child: Text(
+                PortfolioText.portfolioTitle,
+              ),
             ),
             isSmallScreen
                 ? PopupMenuButton(itemBuilder: (context) {
