@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/gen/app_ui.dart';
 
 import 'package:my_portfolio/global/global.dart';
-import 'package:my_portfolio/global/text_content.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// {@template my_portfolio_body}
