@@ -13,7 +13,7 @@ class IntroductionWidget extends StatelessWidget {
             color: Color.fromARGB(255, 231, 236, 223)),
         child: Padding(
           padding: const EdgeInsets.all(10),
-          child: Text(
+          child: SelectableText(
             text,
             style: const TextStyle(fontSize: 20),
           ),
