@@ -44,7 +44,8 @@ class MyPortfolioPage extends StatelessWidget {
                     children: [
                       TextButton(
                           onPressed: () => context.go('/about_me'),
-                          child: const Text("About Me"))
+                          child: const Text("About Me",
+                              style: TextStyle(fontSize: 20))),
                     ],
                   ),
           ],
