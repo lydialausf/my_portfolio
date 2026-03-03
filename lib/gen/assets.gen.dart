@@ -1,3 +1,5 @@
+// dart format width=80
+
 /// GENERATED CODE - DO NOT MODIFY BY HAND
 /// *****************************************************
 ///  FlutterGen
@@ -5,12 +7,15 @@
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
+// ignore_for_file: deprecated_member_use,directives_ordering,implicit_dynamic_list_literal,unnecessary_import
 
 import 'package:flutter/widgets.dart';
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/Preview.png
+  AssetGenImage get preview => const AssetGenImage('assets/images/Preview.png');
 
   /// File path: assets/images/R.jpeg
   AssetGenImage get r => const AssetGenImage('assets/images/R.jpeg');
@@ -53,6 +58,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo1.jpeg
   AssetGenImage get logo1 => const AssetGenImage('assets/images/logo1.jpeg');
 
+  /// File path: assets/images/logo10.jpeg
+  AssetGenImage get logo10 => const AssetGenImage('assets/images/logo10.jpeg');
+
   /// File path: assets/images/logo2.png
   AssetGenImage get logo2 => const AssetGenImage('assets/images/logo2.png');
 
@@ -86,9 +94,6 @@ class $AssetsImagesGen {
   /// File path: assets/images/php.png
   AssetGenImage get php => const AssetGenImage('assets/images/php.png');
 
-  /// File path: assets/images/preview.png
-  AssetGenImage get preview => const AssetGenImage('assets/images/preview.png');
-
   /// File path: assets/images/range.jpg
   AssetGenImage get range => const AssetGenImage('assets/images/range.jpg');
 
@@ -102,6 +107,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        preview,
         r,
         amazon,
         androidstudio,
@@ -114,6 +120,7 @@ class $AssetsImagesGen {
         html5,
         logo,
         logo1,
+        logo10,
         logo2,
         logo3,
         logo4,
@@ -125,7 +132,6 @@ class $AssetsImagesGen {
         lydia,
         myself,
         php,
-        preview,
         range,
         teamplayer,
         wordpress
@@ -133,7 +139,7 @@ class $AssetsImagesGen {
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
@@ -143,12 +149,14 @@ class AssetGenImage {
     this._assetName, {
     this.size,
     this.flavors = const {},
+    this.animation,
   });
 
   final String _assetName;
 
   final Size? size;
   final Set<String> flavors;
+  final AssetGenImageAnimation? animation;
 
   Image image({
     Key? key,
@@ -171,7 +179,7 @@ class AssetGenImage {
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -217,4 +225,16 @@ class AssetGenImage {
   String get path => _assetName;
 
   String get keyName => _assetName;
+}
+
+class AssetGenImageAnimation {
+  const AssetGenImageAnimation({
+    required this.isAnimation,
+    required this.duration,
+    required this.frames,
+  });
+
+  final bool isAnimation;
+  final Duration duration;
+  final int frames;
 }

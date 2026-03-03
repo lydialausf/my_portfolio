@@ -21,6 +21,13 @@ class MyPortfolioBody extends StatefulWidget {
 class _MyPortfolioBodyState extends State<MyPortfolioBody> {
   final List<Map<String, dynamic>> workExperiences = [
     {
+      'companyLogo': Assets.images.logo10.image(width: 100, height: 100),
+      'title': "Junior Flutter Developer @ Websight Sdn Bhd",
+      'subtitle':
+          "\n\u2022 Developed a cross-platform mobile application using Flutter and GetX as the state management.\n\u2022 Collaborated with UI/UX designer to implement user interface.\n\u2022 Worked closely with backend to fetch and post data.",
+      'trailing': "Kuala Lumpur"
+    },
+    {
       'companyLogo': Assets.images.logo.image(width: 100, height: 100),
       'title': "Flutter Developer @ Discovery Holiday Parks",
       'subtitle':
